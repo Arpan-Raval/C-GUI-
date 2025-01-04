@@ -9,10 +9,17 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 
 	wxStaticText* staticText = new wxStaticText(panel, wxID_ANY, "I Can't Move From Here", wxPoint(50, 150));
 
-	wxTextCtrl* textBox = new wxTextCtrl(panel, wxID_ANY, "You Can Change This", wxPoint(50, 250), wxSize(200, 20));
+	wxTextCtrl* textBox = new wxTextCtrl(panel, wxID_ANY, "You Can Change This", wxPoint(550, 150), wxSize(200, 20));
 
-	wxSlider* slider = new wxSlider(panel, wxID_ANY, 25, 0, 100, wxPoint(50, 350), wxSize(200, -1));
+	wxSlider* slider = new wxSlider(panel, wxID_ANY, 25, 0, 100, wxPoint(50, 250), wxSize(200, -1));
 
-	wxGauge* gauge = new wxGauge(panel, wxID_ANY, 100, wxPoint(550, 350), wxSize(200, -1));
+	wxGauge* gauge = new wxGauge(panel, wxID_ANY, 100, wxPoint(550, 250), wxSize(200, -1));
 	gauge->SetValue(50);
+
+	wxArrayString Choices;
+	Choices.Add("Option A");
+	Choices.Add("Option B");
+	Choices.Add("Option C");
+	wxChoice* choice = new wxChoice(panel, wxID_ANY, wxPoint(50, 350), wxSize(200, -1), Choices);
+	choice->Select(0);              //sauthi pahela 0th index option dekhashe , Option A
 }
