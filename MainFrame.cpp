@@ -27,4 +27,6 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 	wxListBox* listbox = new wxListBox(panel, wxID_ANY, wxPoint(550, 350), wxSize(200, -1), Choices);  //jyare box ma Click karine Select Karvanu Hoy Tyare
 
 	wxSpinCtrl* spinCtrl = new wxSpinCtrl(panel, wxID_ANY, "", wxPoint(50, 450), wxSize(200, -1));  //just like Number input in HTML ,Also Can Set Min & Max Value
+
+	wxRadioBox* radiobox = new wxRadioBox(panel, wxID_ANY, "Choose", wxPoint(550,450), wxDefaultSize, Choices);  // Radio button when you what to Select Only One Option At a Time by User
 }
