@@ -3,23 +3,23 @@
 #include <wx/spinctrl.h> // This is For wxSpinCtrl
 
 MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) {
-	wxPanel* panel = new wxPanel(this);
-	wxButton* button = new wxButton(panel, wxID_ANY, "Button", wxPoint(50, 50), wxSize(100, 35));
+	wxPanel* panel = new wxPanel(this);  //Without This ,Button Will Take A FullScreen So we Have to Adjust In Panel.
+	wxButton* button = new wxButton(panel, wxID_ANY, "Button", wxPoint(50, 50), wxSize(100, 35)); //Normal Button
 
-	wxCheckBox* checkbox = new wxCheckBox(panel, wxID_ANY, "CheckBox",wxPoint(550,50));
+	wxCheckBox* checkbox = new wxCheckBox(panel, wxID_ANY, "CheckBox",wxPoint(550,50));  //Tick Mark Karva Mate
 
-	wxStaticText* staticText = new wxStaticText(panel, wxID_ANY, "I Can't Move From Here", wxPoint(50, 150));
+	wxStaticText* staticText = new wxStaticText(panel, wxID_ANY, "I Can't Move From Here", wxPoint(50, 150));   //Aa Text Ma Kayi J Ferfar Naa Thay
 
-	wxTextCtrl* textBox = new wxTextCtrl(panel, wxID_ANY, "You Can Change This", wxPoint(550, 150), wxSize(200, 20));
+	wxTextCtrl* textBox = new wxTextCtrl(panel, wxID_ANY, "You Can Change This", wxPoint(550, 150), wxSize(200, 20));   //Aani Andar Na Text Ne Change Kari Sakay
 
-	wxSlider* slider = new wxSlider(panel, wxID_ANY, 25, 0, 100, wxPoint(50, 250), wxSize(200, -1));
+	wxSlider* slider = new wxSlider(panel, wxID_ANY, 25, 0, 100, wxPoint(50, 250), wxSize(200, -1));   //drag to Slide To Adjust Value
 
-	wxGauge* gauge = new wxGauge(panel, wxID_ANY, 100, wxPoint(550, 250), wxSize(200, -1));
-	gauge->SetValue(50);
+	wxGauge* gauge = new wxGauge(panel, wxID_ANY, 100, wxPoint(550, 250), wxSize(200, -1));    //Mast Progress Bar Show Karavava Mate
+	gauge->SetValue(50);   //Progress Bar 50 sudhi dekhshe
 
-	wxArrayString Choices;
-	Choices.Add("Option A");
-	Choices.Add("Option B");
+	wxArrayString Choices;    //To Make Array Of String
+	Choices.Add("Option A");  
+	Choices.Add("Option B");  //Add It In Array
 	Choices.Add("Option C");
 	wxChoice* choice = new wxChoice(panel, wxID_ANY, wxPoint(50, 350), wxSize(200, -1), Choices);
 	choice->Select(0);              //sauthi pahela 0th index option dekhashe , Option A
