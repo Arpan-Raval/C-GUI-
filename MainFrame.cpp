@@ -1,5 +1,6 @@
 #include "MainFrame.h"
 #include <wx/wx.h>
+#include <wx/spinctrl.h> // This is For wxSpinCtrl
 
 MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) {
 	wxPanel* panel = new wxPanel(this);
@@ -22,4 +23,6 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 	Choices.Add("Option C");
 	wxChoice* choice = new wxChoice(panel, wxID_ANY, wxPoint(50, 350), wxSize(200, -1), Choices);
 	choice->Select(0);              //sauthi pahela 0th index option dekhashe , Option A
+
+	wxSpinCtrl* spinCtrl = new wxSpinCtrl(panel, wxID_ANY, "", wxPoint(50, 450), wxSize(200, -1));  //just like Number input in HTML ,Also Can Set Min & Max Value
 }
