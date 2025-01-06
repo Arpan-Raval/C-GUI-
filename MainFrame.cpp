@@ -8,7 +8,8 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 
 	wxCheckBox* checkbox = new wxCheckBox(panel, wxID_ANY, "CheckBox",wxPoint(550,50),wxDefaultSize,wxCHK_3STATE | wxCHK_ALLOW_3RD_STATE_FOR_USER);  //Tick Mark Karva Mate
 
-	wxStaticText* staticText = new wxStaticText(panel, wxID_ANY, "I Can't Move From Here", wxPoint(50, 150));   //Aa Text Ma Kayi J Ferfar Naa Thay
+	wxStaticText* staticText = new wxStaticText(panel, wxID_ANY, "I Can't Move From Here", wxPoint(50, 150),wxSize(300,-1),wxALIGN_CENTRE_HORIZONTAL);   //Aa Text Ma Kayi J Ferfar Naa Thay
+	staticText->SetBackgroundColour(*wxLIGHT_GREY);//for add background colour
 
 	wxTextCtrl* textBox = new wxTextCtrl(panel, wxID_ANY, "You Can Change This", wxPoint(550, 150), wxSize(200, 20));   //Aani Andar Na Text Ne Change Kari Sakay
 
