@@ -11,7 +11,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 	wxStaticText* staticText = new wxStaticText(panel, wxID_ANY, "I Can't Move From Here", wxPoint(50, 150),wxSize(300,-1),wxALIGN_CENTRE_HORIZONTAL);   //Aa Text Ma Kayi J Ferfar Naa Thay
 	staticText->SetBackgroundColour(*wxLIGHT_GREY);//for add background colour
 
-	wxTextCtrl* textBox = new wxTextCtrl(panel, wxID_ANY, "You Can Change This", wxPoint(550, 150), wxSize(200, 20));   //Aani Andar Na Text Ne Change Kari Sakay
+	wxTextCtrl* textBox = new wxTextCtrl(panel, wxID_ANY, "You Can Change This", wxPoint(550, 150), wxSize(200, 20),wxTE_PASSWORD);   //Aani Andar Na Text Ne Change Kari Sakay
 
 	wxSlider* slider = new wxSlider(panel, wxID_ANY, 25, 0, 100, wxPoint(50, 250), wxSize(200, -1));   //drag to Slide To Adjust Value
 
