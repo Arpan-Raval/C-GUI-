@@ -13,7 +13,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 
 	wxTextCtrl* textBox = new wxTextCtrl(panel, wxID_ANY, "You Can Change This", wxPoint(550, 150), wxSize(200, 20),wxTE_PASSWORD);   //Aani Andar Na Text Ne Change Kari Sakay
 
-	wxSlider* slider = new wxSlider(panel, wxID_ANY, 25, 0, 100, wxPoint(50, 250), wxSize(200, -1));   //drag to Slide To Adjust Value
+	wxSlider* slider = new wxSlider(panel, wxID_ANY, 25, 0, 100, wxPoint(50, 250), wxSize(200, -1),wxSL_VALUE_LABEL);   //drag to Slide To Adjust Value
 
 	wxGauge* gauge = new wxGauge(panel, wxID_ANY, 100, wxPoint(550, 250), wxSize(200, -1));    //Mast Progress Bar Show Karavava Mate
 	gauge->SetValue(50);   //Progress Bar 50 sudhi dekhshe
