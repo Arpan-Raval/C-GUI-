@@ -19,10 +19,10 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 	gauge->SetValue(50);   //Progress Bar 50 sudhi dekhshe
 
 	wxArrayString Choices;    //To Make Array Of String
-	Choices.Add("Option A");  
-	Choices.Add("Option B");  //Add It In Array
 	Choices.Add("Option C");
-	wxChoice* choice = new wxChoice(panel, wxID_ANY, wxPoint(50, 350), wxSize(200, -1), Choices);
+	Choices.Add("Option A");  //Add It In Array
+	Choices.Add("Option B");
+	wxChoice* choice = new wxChoice(panel, wxID_ANY, wxPoint(50, 350), wxSize(200, -1), Choices,wxCB_SORT);
 	choice->Select(0);              //sauthi pahela 0th index option dekhashe , Option A
 
 	wxListBox* listbox = new wxListBox(panel, wxID_ANY, wxPoint(550, 350), wxSize(200, -1), Choices);  //jyare box ma Click karine Select Karvanu Hoy Tyare
