@@ -8,6 +8,7 @@ public:
 private:
 	void Submit(wxCommandEvent& evt);  //make event
 	void Slider(wxCommandEvent& evt);
+	void OnText(wxCommandEvent& evt);
 	wxDECLARE_EVENT_TABLE();    // this will create a event table for sync with button
 };
 

@@ -3,12 +3,14 @@
 
 enum {
 	BUTTON_ID = 2,  // give id to button
-	SLIDER_ID = 3  // GIVE ID TO SLIDER
+	SLIDER_ID = 3,  // GIVE ID TO SLIDER
+	TEXT_ID = 4
 };
 
 wxBEGIN_EVENT_TABLE(MainFrame,wxFrame)
 	EVT_BUTTON(BUTTON_ID,MainFrame::Submit)      //aa naa lakho to button work naa thay , etle event table banavu J pade
 	EVT_SLIDER(SLIDER_ID,MainFrame::Slider)
+	EVT_TEXT(TEXT_ID,MainFrame::OnText)
 wxEND_EVENT_TABLE()
 
 MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) {
@@ -16,6 +18,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 
 	wxButton* button = new wxButton(panel, BUTTON_ID, "Button", wxPoint(300, 250), wxSize(200, 50));
 	wxSlider* slider = new wxSlider(panel, SLIDER_ID, 25, 0, 100, wxPoint(300, 350), wxSize(200, 50));
+	wxTextCtrl* text = new wxTextCtrl(panel, TEXT_ID, "", wxPoint(300, 150), wxSize(200, 25));
 	CreateStatusBar();  // this will create status bar below 
 }
 
@@ -25,5 +28,10 @@ void MainFrame::Submit(wxCommandEvent& evt) {
 
 void MainFrame::Slider(wxCommandEvent& evt) {
 	wxString str = wxString::Format("Slider Value is : %d", evt.GetInt());
+	wxLogStatus(str);
+}
+
+void MainFrame::OnText(wxCommandEvent& evt) {
+	wxString str = wxString::Format("text is : %s", evt.GetString());
 	wxLogStatus(str);
 }
