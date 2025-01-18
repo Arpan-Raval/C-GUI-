@@ -7,12 +7,6 @@ enum {
 	TEXT_ID = 4
 };
 
-wxBEGIN_EVENT_TABLE(MainFrame,wxFrame)
-	EVT_BUTTON(BUTTON_ID,MainFrame::Submit)      //aa naa lakho to button work naa thay , etle event table banavu J pade
-	EVT_SLIDER(SLIDER_ID,MainFrame::Slider)
-	EVT_TEXT(TEXT_ID,MainFrame::OnText)
-wxEND_EVENT_TABLE()
-
 MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) {
 	wxPanel* panel = new wxPanel(this);  //Without This ,Button Will Take A FullScreen So we Have to Adjust In Panel.
 
