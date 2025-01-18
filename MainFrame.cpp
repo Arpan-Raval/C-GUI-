@@ -15,6 +15,9 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 	button2->Bind(wxEVT_BUTTON, &MainFrame::onButton2, this);
 	slider->Bind(wxEVT_SLIDER, &MainFrame::Slider, this);
 	text->Bind(wxEVT_TEXT, &MainFrame::OnText, this);
+
+	this->Bind(wxEVT_CLOSE_WINDOW, &MainFrame::onClose, this);  // This is for closing a window
+
 	CreateStatusBar();  // this will create status bar below 
 }
 
@@ -39,4 +42,9 @@ void MainFrame::Slider(wxCommandEvent& evt) {
 void MainFrame::OnText(wxCommandEvent& evt) {
 	wxString str = wxString::Format("text is : %s", evt.GetString());
 	wxLogStatus(str);
+}
+
+void MainFrame::onClose(wxCloseEvent& evt) {
+	wxLogMessage("CLosing a Window");             // it makes a pop up message when we click close button
+	evt.Skip();                                   //because its parent node doesn't know that we actually want to close the window ,,without this we only get message but the window will still open.
 }
