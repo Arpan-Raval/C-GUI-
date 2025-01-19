@@ -12,5 +12,12 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 
 void MainFrame::onKey(wxKeyEvent& evt) {
 	wxChar keyChar = evt.GetUnicodeKey();  // Kayi Key Add Press Kari E Khabar Pade
-	wxLogStatus("key pressed %c",keyChar);//  Je Pan Key Press Kari Hoy E Print Thashe
+
+	if (keyChar == WXK_NONE) {
+		int keyCode = evt.GetKeyCode();
+		wxLogStatus("key Code is %d", keyCode);
+	}
+	else {
+		wxLogStatus("key pressed %c",keyChar);//  Je Pan Key Press Kari Hoy E Print Thashe
+	}
 }
