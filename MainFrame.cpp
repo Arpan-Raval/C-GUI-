@@ -8,8 +8,11 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 	
 	CreateStatusBar();  // this will create status bar below 
     
-	panel->Bind(wxEVT_LEFT_DOWN, &MainFrame::onMouse, this);    // aanathi jyare pan screen par LEFT click karshu etle function run thashe and print karshe
-}
+	panel->Bind(wxEVT_MOTION, &MainFrame::onMouse, this);    //wxEVT_MOTION thi without click mousee jya layi jayish tya function run thashe 
+}             //wxEVT_LEFT_DOWN    --->   left Click
+		      //wxEVT_RIGHT_DOWN   --->   Right Click
+              //wxEVT_MIDDLE_DOWN  --->   Middle Click
+			  //wxEVT_LEFT_DCLICK  --->   DOUBLE CLICK
 
 void MainFrame::onMouse(wxMouseEvent& evt) {
 	wxPoint mousePoint = evt.GetPosition();   // GetPosition() method thi tamne pointer na cooardinate made and ene "mousePoint" name na variable ma store karya.
