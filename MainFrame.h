@@ -5,6 +5,8 @@ class MainFrame : public wxFrame
 {
 public:
 	MainFrame(const wxString& title);
+private:
+	void onKey(wxKeyEvent& evt);
 
 };
 
