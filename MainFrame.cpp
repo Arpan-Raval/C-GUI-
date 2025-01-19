@@ -6,7 +6,8 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 	wxPanel* panel = new wxPanel(this);  //Without This ,Button Will Take A FullScreen So we Have to Adjust In Panel.
 
 	
-	CreateStatusBar();  // this will create status bar below 
+	wxStatusBar* statusbar = CreateStatusBar();  // this will create status bar below 
+	statusbar->SetDoubleBuffered(true);         // aanathi je output ma lag thatu hatu e nahi thay and smooth chalse
     
 	panel->Bind(wxEVT_MOTION, &MainFrame::onMouse, this);    //wxEVT_MOTION thi without click mousee jya layi jayish tya function run thashe 
 }             //wxEVT_LEFT_DOWN    --->   left Click
